@@ -1,7 +1,9 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import {db, auth} from './firebase-config'
-import {collection, getDocs, addDoc} from 'firebase/firestore'
+// peter - changed - 11/27/2022
+import {collection, doc, setDoc} from 'firebase/firestore'
+
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
 import Data from './data'
 
@@ -9,7 +11,9 @@ function App() {
 
   // firestore stuff
   const [accounts, setAccounts] = useState([])
-  const usersCollectionRef = collection(db, "users")
+
+  // peter - changed - 11/27/2022
+  // const usersCollectionRef = collection(db, "users")
 
   // auth stuff
   const [registerEmail, setregisterEmail] = useState("")
@@ -27,8 +31,17 @@ function App() {
   // create new user
   const register = async () => {
     try{
-      const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
-      createAccount()
+      // peter - changed - 11/27/2022
+      const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword).then(async(userRec) => {
+        const userInfo = userRec.user;
+        await setDoc(doc(db, "users", userInfo.uid), {
+          email: registerEmail,
+          password: registerPassword,
+          picked: []
+        })
+      })
+      // peter - changed - 11/27/2022
+      //createAccount()
     } catch (error) {
       console.log(error.message)
     }
@@ -46,10 +59,13 @@ function App() {
     await signOut(auth)
   }
 
-///  stuff after this line is database
-  const createAccount = async() => {
-    await addDoc(usersCollectionRef, {email: registerEmail, password: registerPassword, picked: []})
-  }
+// peter - changed - 11/27/2022 - createAccount
+// ///  stuff after this line is database
+//   const createAccount = async() => {
+//     await addDoc(usersCollectionRef, {email: registerEmail, password: registerPassword, picked: []})
+//   }
+
+
 
   // useEffect(() => {
   //   const getUsers = async () => {
@@ -59,6 +75,7 @@ function App() {
   //   getUsers()
   // }, [])
 
+  
   // const getInfo = async () => {
   //   const data = await getDocs(usersCollectionRef)
   //   console.log(data.docs)
