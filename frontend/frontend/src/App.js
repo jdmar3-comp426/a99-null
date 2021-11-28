@@ -2,7 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import {db, auth} from './firebase-config'
 // peter - changed - 11/27/2022
-import {collection, doc, setDoc} from 'firebase/firestore'
+import {collection, doc, setDoc, getDoc} from 'firebase/firestore'
 
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
 import Data from './data'
@@ -47,7 +47,14 @@ function App() {
 
   const login = async () => {
     try{
+      // const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      // get the user data
+      const docRef = doc(db, "users", user.user.uid)
+      const docSnap = await getDoc(docRef)
+      console.log(docSnap._document.data.value.mapValue.fields.picked.arrayValue.values[0])
+      console.log(user.user.uid)
+
     } catch (error) {
       console.log(error.message)
     }
@@ -82,16 +89,6 @@ function App() {
   return (
     <div>
       <h1>Hello world</h1>
-
-     {/* make change this from list of accounts to list of fields for each user */}
-      <div>{accounts.map((account) => {
-        return (
-        <div>
-          <h3>Email: {account.email}</h3>
-        </div>
-        )
-        })}
-      </div>
       
       <div>
         <h3>Register user</h3>

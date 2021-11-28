@@ -1,15 +1,16 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
+// import {currentUser} from './App'
 import axios from 'axios'
 
-class Data extends Component {
-    constructor() {
-        super()
-        this.state = {
-            stuff: []
-        }
-    }
+function Data() {
 
-    componentDidMount() {
+    // const [input, setInput] = useState("")
+
+    const getRestaurants = (e) => {
+        // get radius
+        // make the API call passing in the radius
+        e.preventDefault()
+        // setInput(e.target.value)
         let lat = 0
         let lon = 0
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -17,6 +18,8 @@ class Data extends Component {
             lon = position.coords.longitude
             console.log(lat)
             console.log(lon)
+
+            // console.log the radius value to test here...
 
             // add parameters (and pass the stuff from above)
             axios.get(`/rests/${lat}/${lon}`).then(function(response) {
@@ -26,17 +29,24 @@ class Data extends Component {
                 console.log(error)
             })  
         })
+        // console.log(currentUser)
     }
 
-    // event listener to generate random restaurant in the API call when a button is pressed
+    return (
+        <div>
+             <h2>Gotted</h2>
 
-    render() {
-        return (
-            <div>
-                <h2>Gotted</h2>
-            </div>
-        )
-    }
+             <form onSubmit = {getRestaurants}>
+                 <label for="radius">Radius (meters?) </label>
+                 <input type="number" placeholder="1500"></input>
+                 <button type="submit">Get restaurant</button>
+            </form>
+
+            <br/>
+
+            <button>Add to restaurant list</button>
+        </div>
+    )
 }
 
 export default Data
