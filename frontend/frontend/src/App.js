@@ -14,10 +14,8 @@ function App() {
   // auth stuff
   const [registerEmail, setregisterEmail] = useState("")
   const [registerPassword, setregisterPassword] = useState("")
-  // const [registerID, setregisterID] = useState("")
   const [loginEmail, setloginEmail] = useState("")
   const [loginPassword, setloginPassword] = useState("")
-  // const [loginID, setloginID] = useState("")
   const [currentUser, setcurrentUser] = useState({})
 
   onAuthStateChanged(auth, (loggedin) => {
@@ -51,14 +49,6 @@ function App() {
     await addDoc(usersCollectionRef, {email: registerEmail, password: registerPassword, picked: []})
   }
 
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const data = await getDocs(usersCollectionRef)
-  //     setAccounts(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-  //   }
-  //   getUsers()
-  // }, [])
-
   // const getInfo = async () => {
   //   const data = await getDocs(usersCollectionRef)
   //   console.log(data.docs)
@@ -68,8 +58,7 @@ function App() {
     <div>
       <h1>Hello world</h1>
 
-      <Data />
-
+     {/* make change this from list of accounts to list of fields for each user */}
       <div>{accounts.map((account) => {
         return (
         <div>
@@ -96,6 +85,8 @@ function App() {
       <h4>User logged in: {currentUser?.email}</h4>
 
       <button onClick={logout}>Sign Out</button>
+
+      <Data />
 
     </div>
     
