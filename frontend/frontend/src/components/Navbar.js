@@ -31,7 +31,7 @@ function PageNavbar() {
                 </Nav>
                 <Nav>
                 <NavDropdown title={dropdownTitle} id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Search History</NavDropdown.Item>
+                <NavDropdown.Item href="/history">Search History</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/updateaccount">
                     Account Setting

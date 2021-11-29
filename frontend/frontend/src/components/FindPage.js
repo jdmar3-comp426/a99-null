@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import PageNavbar from './Navbar.js'
 import {db, auth} from '../firebase-config'
 import {Navigate } from 'react-router-dom'
-import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
+import {onAuthStateChanged} from 'firebase/auth'
 import Data from './data'
 
 function FindPage() {

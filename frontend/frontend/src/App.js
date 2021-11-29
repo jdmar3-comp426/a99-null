@@ -9,6 +9,7 @@ import {
     Routes,
     Route
   } from "react-router-dom";
+import SearchHistory from './components/SearchHistory';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Route path="login" element={<Login />} />
       <Route path="find" element={<FindPage />} />
       <Route path="updateaccount" element={<UpdateAccount />} />
+      <Route path="history" element={<SearchHistory />} />
     </Routes>
   </BrowserRouter>
   );
