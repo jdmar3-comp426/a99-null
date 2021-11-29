@@ -2,7 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import {db, auth} from './firebase-config'
 // peter - changed - 11/27/2022
-import {collection, doc, setDoc, getDoc, deleteDoc} from 'firebase/firestore'
+import {collection, doc, setDoc, getDoc, deleteDoc, updateDoc} from 'firebase/firestore'
 
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, getAuth, deleteUser} from 'firebase/auth'
 import Data from './data'
@@ -66,10 +66,8 @@ function App() {
 
 
   const deleteAccount = async () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    if (user !== null) {
-      const uid = user.uid;
+    if (currentUser !== null) {
+      const uid = currentUser.uid;
       // delete from firestore
       await deleteDoc(doc(db, "users", uid)).then(() => {
         console.log("Successfully deleted user data from firestore")
@@ -79,7 +77,7 @@ function App() {
       });
 
       // delete from user authentication
-      await deleteUser(user)
+      await deleteUser(currentUser)
       .then(() => {
         console.log('Successfully deleted user from authentication');
       })

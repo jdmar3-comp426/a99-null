@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-// import {currentUser} from './App'
 import axios from 'axios'
+
+import {db, auth} from './firebase-config'
+import {doc, updateDoc, arrayUnion} from 'firebase/firestore'
 
 function Data() {
 
@@ -45,6 +47,17 @@ function Data() {
         })
     }
 
+    // const addRestaurant = (e) => {
+    //     const user = getAuth.currentUser;
+    //     if (user != null) {
+    //         let docRef = doc(db, 'users', "PcecP0IkayM8Sy4VST3gItTwjiC2");
+    //         console.log(user.uid)
+    //         updateDoc(docRef, {
+    //             picked: arrayUnion("ChIJQ4wPfPk_cDURiVY9Wjv52AM")
+    //         });
+    //     }
+    // }
+
     return (
         <div>
              <h2>Gotted</h2>
@@ -63,7 +76,6 @@ function Data() {
 
             <br/>
 
-            <button>Add to restaurant list</button>
         </div>
     )
 }
