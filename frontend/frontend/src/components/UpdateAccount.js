@@ -35,7 +35,7 @@ function UpdateAccount() {
           
       }
 
-      const deleteUser = async () => {
+      const deleteAccount  = async () => {
         const curUser = auth.currentUser;
         const uid = curUser.uid;
         // delete from firestore
@@ -45,8 +45,8 @@ function UpdateAccount() {
         .catch((error) => {
           console.log('Error deleting user from firestore:', error);
         });
-  
-        // delete from user authentication
+        console.log(curUser)
+        //delete from user authentication
         await deleteUser(curUser)
         .then(() => {
           console.log('Successfully deleted user from authentication');
@@ -84,7 +84,7 @@ function UpdateAccount() {
                 </Form>
                 </Row>
                 <br/>
-                <Button  onClick={deleteUser} variant="primary" type="button">
+                <Button  onClick={deleteAccount} variant="primary" type="button">
                     Delete current user
                 </Button>
                 </Container>
