@@ -3,8 +3,8 @@ import PageNavbar from './Navbar.js'
 import {Form, Button, Container, Row} from 'react-bootstrap'
 import {Navigate } from 'react-router-dom'
 import {db, auth} from '../firebase-config'
-import {collection, doc, setDoc, getDoc} from 'firebase/firestore'
-import {onAuthStateChanged, updatePassword} from 'firebase/auth'
+import {collection, doc, deleteDoc, getDoc} from 'firebase/firestore'
+import {onAuthStateChanged, updatePassword, deleteUser} from 'firebase/auth'
 
 
 function UpdateAccount() {
@@ -35,6 +35,29 @@ function UpdateAccount() {
           
       }
 
+      const deleteUser = async () => {
+        const curUser = auth.currentUser;
+        const uid = curUser.uid;
+        // delete from firestore
+        await deleteDoc(doc(db, "users", uid)).then(() => {
+          console.log("Successfully deleted user data from firestore")
+        })
+        .catch((error) => {
+          console.log('Error deleting user from firestore:', error);
+        });
+  
+        // delete from user authentication
+        await deleteUser(curUser)
+        .then(() => {
+          console.log('Successfully deleted user from authentication');
+        })
+        .catch((error) => {
+          console.log('Error deleting user from authentication:', error);
+        });
+
+        
+    }
+
 
 
 
@@ -60,6 +83,10 @@ function UpdateAccount() {
                     {prompt}
                 </Form>
                 </Row>
+                <br/>
+                <Button  onClick={deleteUser} variant="primary" type="button">
+                    Delete current user
+                </Button>
                 </Container>
                 </div>
             </div>

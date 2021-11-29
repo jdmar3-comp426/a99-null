@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-// import {currentUser} from './App'
 import axios from 'axios'
+
+import {db, auth} from '../firebase-config'
+import {doc, updateDoc, arrayUnion} from 'firebase/firestore'
 
 function Data() {
 
@@ -32,6 +34,30 @@ function Data() {
         // console.log(currentUser)
     }
 
+    const searchRestaurant = (e) => {
+        e.preventDefault()
+        let place_id = "ChIJQ4wPfPk_cDURiVY9Wjv52AM"
+        console.log(place_id)
+
+        axios.get(`/place/${place_id}`).then(function(response) {
+            console.log(response.data)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
+
+    // const addRestaurant = (e) => {
+    //     const user = getAuth.currentUser;
+    //     if (user != null) {
+    //         let docRef = doc(db, 'users', "PcecP0IkayM8Sy4VST3gItTwjiC2");
+    //         console.log(user.uid)
+    //         updateDoc(docRef, {
+    //             picked: arrayUnion("ChIJQ4wPfPk_cDURiVY9Wjv52AM")
+    //         });
+    //     }
+    // }
+
     return (
         <div>
              <h2>Gotted</h2>
@@ -42,9 +68,14 @@ function Data() {
                  <button type="submit">Get restaurant</button>
             </form>
 
+            <form onSubmit = {searchRestaurant}>
+                <label for="place_id">Place ID </label>
+                <input type="text" placeholder="ChIJQ4wPfPk_cDURiVY9Wjv52AM"></input>
+                <button type="search">Search a place</button>
+            </form>
+
             <br/>
 
-            <button>Add to restaurant list</button>
         </div>
     )
 }

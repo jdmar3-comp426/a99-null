@@ -3,7 +3,7 @@ import PageNavbar from './Navbar.js'
 import {db, auth} from '../firebase-config'
 import {Navigate } from 'react-router-dom'
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
-
+import Data from './data'
 
 function FindPage() {
     const user = auth.currentUser;
@@ -18,6 +18,7 @@ function FindPage() {
             <div>
                 <PageNavbar />
                  find restaurant;
+                 <Data />
             </div>
         )
     } else {
