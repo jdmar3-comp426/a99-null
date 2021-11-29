@@ -22,3 +22,14 @@ app.get('/rests/:lat/:lon', (req,res) => {
         }
     })
 })
+
+app.get('/place/:placeid', (req,res) => {
+    console.log(req.params)
+    request(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${req.params.placeid}&key=AIzaSyDoh9FWT2OHgzc9GhHbNlMtvymkKx89mkU`,
+    function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var parsed = JSON.parse(body)
+            res.send(parsed)
+        }
+    })
+})

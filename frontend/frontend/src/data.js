@@ -32,6 +32,19 @@ function Data() {
         // console.log(currentUser)
     }
 
+    const searchRestaurant = (e) => {
+        e.preventDefault()
+        let place_id = "ChIJQ4wPfPk_cDURiVY9Wjv52AM"
+        console.log(place_id)
+
+        axios.get(`/place/${place_id}`).then(function(response) {
+            console.log(response.data)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
+
     return (
         <div>
              <h2>Gotted</h2>
@@ -40,6 +53,12 @@ function Data() {
                  <label for="radius">Radius (meters?) </label>
                  <input type="number" placeholder="1500"></input>
                  <button type="submit">Get restaurant</button>
+            </form>
+
+            <form onSubmit = {searchRestaurant}>
+                <label for="place_id">Place ID </label>
+                <input type="text" placeholder="ChIJQ4wPfPk_cDURiVY9Wjv52AM"></input>
+                <button type="search">Search a place</button>
             </form>
 
             <br/>
