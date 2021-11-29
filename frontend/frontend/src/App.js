@@ -3,6 +3,7 @@ import Home from './components/Home'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import FindPage from './components/FindPage'
+import UpdateAccount from './components/UpdateAccount'
 import {
     BrowserRouter,
     Routes,
@@ -19,6 +20,7 @@ function App() {
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
       <Route path="find" element={<FindPage />} />
+      <Route path="updateaccount" element={<UpdateAccount />} />
     </Routes>
   </BrowserRouter>
   );
