@@ -2,9 +2,9 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import {db, auth} from './firebase-config'
 // peter - changed - 11/27/2022
-import {collection, doc, setDoc, getDoc} from 'firebase/firestore'
+import {collection, doc, setDoc, getDoc, deleteDoc} from 'firebase/firestore'
 
-import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
+import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, getAuth, deleteUser} from 'firebase/auth'
 import Data from './data'
 
 function App() {
@@ -64,6 +64,32 @@ function App() {
     await signOut(auth)
   }
 
+
+  const deleteAccount = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user !== null) {
+      const uid = user.uid;
+      // delete from firestore
+      await deleteDoc(doc(db, "users", uid)).then(() => {
+        console.log("Successfully deleted user data from firestore")
+      })
+      .catch((error) => {
+        console.log('Error deleting user from firestore:', error);
+      });
+
+      // delete from user authentication
+      await deleteUser(user)
+      .then(() => {
+        console.log('Successfully deleted user from authentication');
+      })
+      .catch((error) => {
+        console.log('Error deleting user from authentication:', error);
+      });
+
+    }
+  }
+
 // peter - changed - 11/27/2022 - createAccount
 // ///  stuff after this line is database
 //   const createAccount = async() => {
@@ -102,6 +128,11 @@ function App() {
         <input placeholder="email" onChange={(e) => {setloginEmail(e.target.value)}}/>
         <input placeholder="password" onChange={(e) => {setloginPassword(e.target.value)}}/>
         <button onClick={login}>Login</button>
+      </div>
+
+      <div>
+        <h3>Delete current user</h3>
+        <button onClick={deleteAccount}>Delete</button>
       </div>
 
       <h4>User logged in: {currentUser?.email}</h4>
