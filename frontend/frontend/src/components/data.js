@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-import {db, auth} from './firebase-config'
+import {db, auth} from '../firebase-config'
 import { getAuth } from "firebase/auth";
 import { doc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
 
