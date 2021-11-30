@@ -88,28 +88,6 @@ function App() {
     }
   }
 
-// peter - changed - 11/27/2022 - createAccount
-// ///  stuff after this line is database
-//   const createAccount = async() => {
-//     await addDoc(usersCollectionRef, {email: registerEmail, password: registerPassword, picked: []})
-//   }
-
-
-
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const data = await getDocs(usersCollectionRef)
-  //     setAccounts(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-  //   }
-  //   getUsers()
-  // }, [])
-
-  
-  // const getInfo = async () => {
-  //   const data = await getDocs(usersCollectionRef)
-  //   console.log(data.docs)
-  // }
-
   return (
     <div>
       <h1>Hello world</h1>
