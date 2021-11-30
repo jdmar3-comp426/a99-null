@@ -70,7 +70,7 @@ function Data() {
         } else {
             console.log("No user signed-in.")
         }
-      }
+    }
 
 
     
