@@ -5,6 +5,7 @@ import {ListGroup, Container} from 'react-bootstrap'
 import {db, auth} from '../firebase-config'
 import {onAuthStateChanged} from 'firebase/auth'
 import {collection, doc, setDoc, getDoc} from 'firebase/firestore'
+import {Navigate } from 'react-router-dom'
 
 
 function SearchHistory(props) {
@@ -15,36 +16,42 @@ function SearchHistory(props) {
     });
 
     useEffect(async () => {
-        if (!(Object.keys(currentUser).length === 0)){
+        if (currentUser && !(Object.keys(currentUser).length === 0)){
             const docRef = doc(db, "users", currentUser.uid)
             const docSnap = await getDoc(docRef)
             let historyArray = docSnap._document.data.value.mapValue.fields.picked.arrayValue.values
             let historyRows = []
-            for (let i = 0; i < historyArray.length; i++) {
-                let curRowInfo = {}
-                curRowInfo.title = historyArray[i].stringValue
-                let curRowDiv = <SearchHistoryRow key = {i} title={curRowInfo.title} />
-                historyRows.push(curRowDiv)
+            if (historyArray) {
+                for (let i = 0; i < historyArray.length; i++) {
+                    let curRowInfo = {}
+                    curRowInfo.title = historyArray[i].stringValue
+                    let curRowDiv = <SearchHistoryRow key = {i} title={curRowInfo.title} />
+                    historyRows.push(curRowDiv)
+                }
+                sethistoryEntries(historyRows)
             }
-            sethistoryEntries(historyRows)
         }
     }, [currentUser])
 
-    return (
-        <div>
-            <PageNavbar />
-            <Container >
-                <div>
-                    <h1>
-                        My Search History
-                    </h1>
-                </div>
-                <ListGroup>
-                    {historyEntries}
-                </ListGroup>
-            </Container>
-        </div>
-    )
+    if (currentUser) {
+        return (
+            <div>
+                <PageNavbar />
+                <Container >
+                    <div>
+                        <h1>
+                            My Search History
+                        </h1>
+                    </div>
+                    <ListGroup>
+                        {historyEntries}
+                    </ListGroup>
+                </Container>
+            </div>
+        )
+    } else {
+        return <Navigate to="/" />
+    }
 }
 
 export default SearchHistory
