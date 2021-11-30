@@ -27,10 +27,12 @@ function Data() {
             })
             .catch(function (error) {
                 console.log(error)
-            })  
+            })
         })
         // console.log(currentUser)
     }
+
+
 
     return (
         <div>
@@ -48,5 +50,4 @@ function Data() {
         </div>
     )
 }
-
 export default Data
