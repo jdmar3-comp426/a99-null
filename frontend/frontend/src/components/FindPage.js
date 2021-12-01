@@ -4,6 +4,9 @@ import {db, auth} from '../firebase-config'
 import {Navigate } from 'react-router-dom'
 import axios from 'axios'
 //import MapContainer from './MapContainer.jsx'
+import { getAuth } from "firebase/auth";
+import { doc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
+
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
 import {Popover,Button,Over} from 'react-bootstrap';
 
@@ -18,6 +21,23 @@ function FindPage () {
     onAuthStateChanged(auth, (user) => {
         setcurrentUser(user);
     });
+
+    const addSearchHistory = async (place_id, restaurant_name) => {
+
+        const auth = getAuth();
+        const user = auth.currentUser;
+    
+        if (user) {
+            const searchHistoryRef = doc(db, "users", user.uid)
+            console.log(place_id)
+            console.log(restaurant_name)
+            await updateDoc(searchHistoryRef, {
+                picked: arrayUnion({"date": new Date(), "place_id": place_id, "restaurant_name": restaurant_name})
+            });
+        } else {
+            console.log("No user signed-in.")
+        }
+    }
 
     const getRestaurant = (e) => {
         // get radius
@@ -41,6 +61,7 @@ function FindPage () {
             // picking a random index from the array of nearby restaurants
             let i = Math.floor(Math.random() * (response.data.results.length));
             console.log(response.data.results)
+            addSearchHistory(response.data.results[i].place_id, response.data.results[i].name)
 
             //saving desired data from randomly selected restaurant
             setRating(response.data.results[i]["rating"]);
