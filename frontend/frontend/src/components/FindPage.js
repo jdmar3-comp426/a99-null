@@ -46,7 +46,7 @@ function FindPage () {
         // setInput(e.target.value)
         let lat = 0
         let lon = 0
-        let radius = document.getElementById('radius').value
+        let radius = document.getElementById('radius').value ? document.getElementById('radius').value : 1500
 
         navigator.geolocation.getCurrentPosition(function(position) {
             lat = position.coords.latitude

@@ -3,8 +3,9 @@ import PageNavbar from './Navbar.js'
 import {Form, Button, Container, Row} from 'react-bootstrap'
 import {Navigate } from 'react-router-dom'
 import {db, auth} from '../firebase-config'
-import {collection, doc, deleteDoc, getDoc} from 'firebase/firestore'
+import {collection, doc, deleteDoc, getDoc, updateDoc} from 'firebase/firestore'
 import {onAuthStateChanged, updatePassword, deleteUser} from 'firebase/auth'
+
 
 
 function UpdateAccount() {
@@ -31,6 +32,13 @@ function UpdateAccount() {
               }).catch((error) => {
                 console.log(error.message)
               });
+
+            const userRef = doc(db, "users", auth.currentUser.uid);
+
+            await updateDoc(userRef, {
+              password: password
+            });
+              
           }
           
       }
