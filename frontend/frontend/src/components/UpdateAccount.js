@@ -68,37 +68,40 @@ function UpdateAccount() {
 
 
 
+    if (currentUser) {
+        return (
+                <div>
+                    <PageNavbar />
+                    <div class=".mt-n1">
+                    <Container >
+                    <Row className="justify-content-center">
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>New Password</Form.Label>
+                            <Form.Control type="password" placeholder="Enter new password" onChange={(e) => {setpassword(e.target.value)}} />
+                        </Form.Group>
 
-    return (
-            <div>
-                <PageNavbar />
-                <div class=".mt-n1">
-                <Container >
-                <Row className="justify-content-center">
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>New Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter new password" onChange={(e) => {setpassword(e.target.value)}} />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Repeat New Password</Form.Label>
-                        <Form.Control type="password" placeholder="Repeat new password"  onChange={(e) => {setrepeartedPassword(e.target.value)}} />
-                    </Form.Group>
-                    <Button  onClick={update} variant="primary" type="button">
-                    Update password
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Repeat New Password</Form.Label>
+                            <Form.Control type="password" placeholder="Repeat new password"  onChange={(e) => {setrepeartedPassword(e.target.value)}} />
+                        </Form.Group>
+                        <Button  onClick={update} variant="primary" type="button">
+                        Update password
+                        </Button>
+                        {prompt}
+                    </Form>
+                    </Row>
+                    <br/>
+                    <Button  onClick={deleteAccount} variant="primary" type="button">
+                        Delete current user
                     </Button>
-                    {prompt}
-                </Form>
-                </Row>
-                <br/>
-                <Button  onClick={deleteAccount} variant="primary" type="button">
-                    Delete current user
-                </Button>
-                </Container>
+                    </Container>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+    } else {
+        return <Navigate to="/" />
+    }
 
 }
 
