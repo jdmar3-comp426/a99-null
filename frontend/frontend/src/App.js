@@ -3,11 +3,13 @@ import Home from './components/Home'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import FindPage from './components/FindPage'
+import UpdateAccount from './components/UpdateAccount'
 import {
     BrowserRouter,
     Routes,
     Route
   } from "react-router-dom";
+import SearchHistory from './components/SearchHistory';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
       <Route path="find" element={<FindPage />} />
+      <Route path="updateaccount" element={<UpdateAccount />} />
+      <Route path="history" element={<SearchHistory />} />
     </Routes>
   </BrowserRouter>
   );

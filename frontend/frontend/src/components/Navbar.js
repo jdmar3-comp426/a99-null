@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Navbar, Container, Nav} from 'react-bootstrap';
+import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import {auth} from '../firebase-config'
 import {Navigate } from 'react-router-dom'
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
@@ -19,6 +19,7 @@ function PageNavbar() {
     //console.log(user)
 
     if (user) {
+        const dropdownTitle = "User logged in: " + currentUser?.email;
         return (
             <Navbar bg="light" collapseOnSelect expand="lg" >
             <Container>
@@ -29,7 +30,13 @@ function PageNavbar() {
                 <Nav.Link href="#features">About</Nav.Link>
                 </Nav>
                 <Nav>
-                <Nav.Link >User logged in: {currentUser?.email}</Nav.Link>
+                <NavDropdown title={dropdownTitle} id="navbarScrollingDropdown">
+                <NavDropdown.Item href="/history">Search History</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/updateaccount">
+                    Account Setting
+                </NavDropdown.Item>
+                </NavDropdown>
                 <Nav.Link onClick={logout}>Log out</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

@@ -27,8 +27,9 @@ function Login() {
           // get the user data
           const docRef = doc(db, "users", user.user.uid)
           const docSnap = await getDoc(docRef)
-          //console.log(docSnap._document.data.value.mapValue.fields.picked.arrayValue.values[0])
-          //console.log(user.user.uid)
+        //   console.log(docSnap)
+        //   console.log(docSnap._document.data.value.mapValue.fields.picked.arrayValue.values[0])
+        //   console.log(user.user.uid)
     
         } catch (error) {
           console.log(error.message)

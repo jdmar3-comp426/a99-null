@@ -8,6 +8,7 @@ import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithE
 import {Popover,Button,Over} from 'react-bootstrap';
 
 function FindPage () {
+
     const user = auth.currentUser;
     const [currentUser, setcurrentUser] = useState({})
     const [rating, setRating] = useState(0)
@@ -69,6 +70,7 @@ function FindPage () {
             <p>Address: {address}</p>
             <p>Rating: {rating} </p>
             <p> Pricing (relative out of 5): {price}</p>
+
 
             </div>
 

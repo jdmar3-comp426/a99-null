@@ -1,8 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6277724&assignment_repo_type=AssignmentRepo)
-# a99 Finally
-
-COMP426 final project template repository. All your code and documentation goes here. Change this text to be a brief description of your final project. Put the name in the header above. You will change everything below to be the main technical documentation, as outlined below.
-
+# Reataurant Generator
 ## First steps
 
 Other steps that you will need to take after you have cloned this repository:
@@ -16,6 +13,33 @@ Other steps that you will need to take after you have cloned this repository:
 8. Then put your entire development workflow in this repository.
 9. Use **Pull requests** to propose changes and incorporate them into your code from various team members. 
 10. Use **Issues** to identify and track bugs and also to communicate about various aspects of the project.
+
+## Basic Descriptiong
+
+## Installation requirements/instructions
+- In backend directory:   
+```npm install```  
+```npm start```
+- In frontend/frontend directory:   
+```npm install```  
+```npm start```
+
+## Dependency List  
+
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "firebase": "^9.5.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
+
+## Run Instructions
 
 ## Team mangement
 
@@ -35,20 +59,3 @@ Some basic roles you will want to consider:
     3. Databse lead
     4. Design lead
     5. Etc.
-
-You will notice that there are more roles than people in your group.
-That is because you will all be doing a hybrid job of managing a thing while working on other things.
-
-## Check in with instructional staff
-
-Once all the groups are together, we'll assign each group to an LA to check in with as you progress through the project.
-
-We will post that so that your team can schedule a time for an initial check-in with your assigned LA. It would be a good idea also to add your LA to your repository.
-
-## Assignment instructions
-
-And that is about all you need to get started.
-
-All the rest of the assignment instructions are available at: https://comp426.johndmart.in/assignments/99
-
-Good skill, and have fun with this!
