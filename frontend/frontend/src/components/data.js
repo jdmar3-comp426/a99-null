@@ -29,10 +29,11 @@ function Data() {
             })
             .catch(function (error) {
                 console.log(error)
-            })  
+            })
         })
         // console.log(currentUser)
     }
+
 
     const searchRestaurant = (e) => {
         e.preventDefault()
@@ -58,6 +59,7 @@ function Data() {
     //     }
     // }
 
+
     return (
         <div>
              <h2>Gotted</h2>
@@ -79,5 +81,4 @@ function Data() {
         </div>
     )
 }
-
 export default Data
