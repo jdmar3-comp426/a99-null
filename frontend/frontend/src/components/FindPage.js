@@ -26,15 +26,18 @@ function FindPage () {
         // setInput(e.target.value)
         let lat = 0
         let lon = 0
+        let radius = document.getElementById('radius').value
+
         navigator.geolocation.getCurrentPosition(function(position) {
             lat = position.coords.latitude
             lon = position.coords.longitude
             console.log(lat)
             console.log(lon)
+            console.log(radius)
 
             //picking a restaurant based on a random number
             //need to change this based on array length size later
-         axios.get(`/rests/${lat}/${lon}`).then(function(response){
+         axios.get(`/app/rests/${lat}/${lon}/${radius}`).then(function(response){
             // picking a random index from the array of nearby restaurants
             let i = Math.floor(Math.random() * (response.data.results.length));
             console.log(response.data.results)
@@ -60,7 +63,7 @@ function FindPage () {
             <PageNavbar />
             <form onSubmit = {getRestaurant}>
                  <label for="radius">Radius (meters?) </label>
-                 <input type="number" placeholder="1500"></input>
+                 <input id="radius" type="number" placeholder="1500"></input>
                  <button type="submit">Get restaurant</button>
             </form>
 
