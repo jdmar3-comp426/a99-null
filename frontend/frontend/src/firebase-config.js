@@ -5,13 +5,23 @@ import {getAuth} from 'firebase/auth'
 import { useRef } from "react";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBTcV6Gz8j34oH1JpX49ZQaRNafIe3xCQk",
-    authDomain: "dev-9ba72.firebaseapp.com",
-    projectId: "dev-9ba72",
-    storageBucket: "dev-9ba72.appspot.com",
-    messagingSenderId: "426621217106",
-    appId: "1:426621217106:web:d8c01ed2260c88bded328b",
-    measurementId: "G-2NRY2H64WD"
+    ///* Peter api
+    apiKey: "AIzaSyBfwGCiKlsdHW83GtoVDCHCr1R4ZXUiwME",
+    authDomain: "project-test-c81c1.firebaseapp.com",
+    databaseURL: "https://project-test-c81c1-default-rtdb.firebaseio.com",
+    projectId: "project-test-c81c1",
+    storageBucket: "project-test-c81c1.appspot.com",
+    messagingSenderId: "1057503905122",
+    appId: "1:1057503905122:web:455c6ee459825f9e45d83b"
+    //*/
+//    // Han api
+//     apiKey: "AIzaSyBfwGCiKlsdHW83GtoVDCHCr1R4ZXUiwME",
+//     authDomain: "project-test-c81c1.firebaseapp.com",
+//     projectId: "project-test-c81c1",
+//     storageBucket: "project-test-c81c1.appspot.com",
+//     messagingSenderId: "1057503905122",
+//     appId: "1:426621217106:web:d8c01ed2260c88bded328b",
+//     measurementId: "G-2NRY2H64WD"
 };
   
 const app = initializeApp(firebaseConfig)
