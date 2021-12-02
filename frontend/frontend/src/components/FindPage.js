@@ -10,6 +10,8 @@ import { doc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "fireba
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
 import {Popover,Button,Over} from 'react-bootstrap';
 
+import '../App.css'
+
 function FindPage () {
 
     const user = auth.currentUser;
@@ -80,24 +82,29 @@ function FindPage () {
     console.log(currentUser)
     if (currentUser) {
         return (
-            <div>
+            <div className="findpage">
             <PageNavbar />
-            <form onSubmit = {getRestaurant}>
-                 <label for="radius">Radius (meters?) </label>
-                 <input id="radius" type="number" placeholder="1500"></input>
-                 <button type="submit">Get restaurant</button>
-            </form>
+            {/* input form */}
+            <div className="find-content">
+                <div className="find-form">
+                    <form onSubmit = {getRestaurant}>
+                        <div className="find-form-content">
+                            <label for="radius" className="find-form-content-radius">Radius (meters?) </label> <br/>
+                            <input id="radius" type="number" placeholder="1500"></input><br/>
+                            <button type="submit">Get restaurant</button>
+                        </div>
+                    </form>
+                </div>
 
-
-
-            <p>Restaurant: {name}</p>
-            <p>Address: {address}</p>
-            <p>Rating: {rating} </p>
-            <p> Pricing (relative out of 5): {price}</p>
-
-
+                {/* information */}
+                <div className="find-info">
+                    <p>Restaurant: {name}</p>
+                    <p>Address: {address}</p>
+                    <p>Rating: {rating} </p>
+                    <p> Pricing (relative out of 5): {price}</p>
+                </div>
             </div>
-
+        </div>
         )} else {
         return <Navigate to="/" />
     }

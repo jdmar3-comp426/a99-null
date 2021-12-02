@@ -17,10 +17,10 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} /> 
       <Route path="signup" element={<Signup />} />
-      <Route path="login" element={<Login />} />
-      <Route path="find" element={<FindPage />} />
+      <Route path="login" element={<Login />} />    {/* the login form */}
+      <Route path="find" element={<FindPage />} />  {/* displayed restaurant info + input form */ }
       <Route path="updateaccount" element={<UpdateAccount />} />
       <Route path="history" element={<SearchHistory />} />
     </Routes>

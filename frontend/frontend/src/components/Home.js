@@ -4,9 +4,13 @@ import PageNavbar from './Navbar.js'
 
 function Home() {
     return (
-        <div>
+        <div className="home">
             <PageNavbar />
-             Hello! Signup or login first.
+            <div className="home-content">
+                <h1>Random restaurant finder</h1>
+                <br />
+                <h2>Hello! Signup or login first.</h2>
+            </div>
         </div>
     )
 }

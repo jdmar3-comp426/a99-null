@@ -5,7 +5,7 @@ import {ListGroup} from 'react-bootstrap'
 
 function SearchHistoryRow(props) {
     return (
-        <div>
+        <div className="search-history-row">
             <ListGroup as="ol" numbered>
                 <ListGroup.Item
                     className="d-flex justify-content-between align-items-start"

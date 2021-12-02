@@ -8,6 +8,7 @@ import { getAuth } from "firebase/auth";
 import {collection, doc, setDoc, getDoc} from 'firebase/firestore'
 import {Navigate } from 'react-router-dom'
 
+import '../App.css'
 
 function SearchHistory(props) {
     const [historyEntries, sethistoryEntries] = useState([])
@@ -38,7 +39,7 @@ function SearchHistory(props) {
 
     if (currentUser) {
         return (
-            <div>
+            <div className="search-history">
                 <PageNavbar />
                 <Container >
                     <div>

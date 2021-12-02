@@ -21,7 +21,7 @@ function PageNavbar() {
     if (user) {
         const dropdownTitle = "User logged in: " + currentUser?.email;
         return (
-            <Navbar bg="light" collapseOnSelect expand="lg" >
+            <Navbar bg="light" collapseOnSelect expand="lg">
             <Container>
             <Navbar.Brand href="/find">Find Restaurants</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -45,7 +45,7 @@ function PageNavbar() {
         )
     } else {
         return (
-            <Navbar bg="light" collapseOnSelect expand="lg" >
+            <Navbar bg="light" collapseOnSelect expand="lg">
             <Container>
             <Navbar.Brand href="/find">Find Restaurants</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

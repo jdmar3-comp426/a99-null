@@ -15,13 +15,13 @@ const firebaseConfig = {
     appId: "1:1057503905122:web:455c6ee459825f9e45d83b"
     //*/
 //    // Han api
-//     apiKey: "AIzaSyBfwGCiKlsdHW83GtoVDCHCr1R4ZXUiwME",
-//     authDomain: "project-test-c81c1.firebaseapp.com",
-//     projectId: "project-test-c81c1",
-//     storageBucket: "project-test-c81c1.appspot.com",
-//     messagingSenderId: "1057503905122",
-//     appId: "1:426621217106:web:d8c01ed2260c88bded328b",
-//     measurementId: "G-2NRY2H64WD"
+    // apiKey: "AIzaSyBfwGCiKlsdHW83GtoVDCHCr1R4ZXUiwME",
+    // authDomain: "project-test-c81c1.firebaseapp.com",
+    // projectId: "project-test-c81c1",
+    // storageBucket: "project-test-c81c1.appspot.com",
+    // messagingSenderId: "1057503905122",
+    // appId: "1:426621217106:web:d8c01ed2260c88bded328b",
+    // measurementId: "G-2NRY2H64WD"
 };
   
 const app = initializeApp(firebaseConfig)

@@ -1,0 +1,80 @@
+.test {
+    background-color: blue;
+}
+
+.home {
+    background-color: rgb(219, 111, 111);
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.home-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.login-signup-page {
+    background-color: rgb(103, 103, 192);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.form {
+    background-color: rgb(143, 63, 143);
+    display: flex;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.findpage {
+    background-color: orange;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    /*overflow: hidden;*/
+}
+
+.find-content {
+    display: grid;
+    grid-template-rows: 0.25fr 1fr 1fr 0.25fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.find-form {
+    background-color: teal;
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.find-form-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+.find-form-content-radius {
+    font-size: 2rem;
+}
+
+.find-info {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    grid-area: 3 / 3 / 4 / 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-history {
+    background-color: yellow;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.search-history-row {
+    background-color: navy;
+}

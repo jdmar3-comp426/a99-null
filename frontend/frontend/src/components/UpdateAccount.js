@@ -70,9 +70,10 @@ function UpdateAccount() {
 
     if (currentUser) {
         return (
-                <div>
+                <div className="login-signup-page">
                     <PageNavbar />
                     <div class=".mt-n1">
+                    <div className="form">
                     <Container >
                     <Row className="justify-content-center">
                     <Form>
@@ -92,10 +93,11 @@ function UpdateAccount() {
                     </Form>
                     </Row>
                     <br/>
-                    <Button  onClick={deleteAccount} variant="primary" type="button">
+                    <Button  onClick={deleteAccount} variant="danger" type="button">
                         Delete current user
                     </Button>
                     </Container>
+                    </div>
                     </div>
                 </div>
             )

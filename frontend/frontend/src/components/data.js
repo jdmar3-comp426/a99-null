@@ -5,7 +5,6 @@ import {db, auth} from '../firebase-config'
 import { getAuth } from "firebase/auth";
 import { doc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from "firebase/firestore";
 
-
 function Data() {
 
     // const [input, setInput] = useState("")

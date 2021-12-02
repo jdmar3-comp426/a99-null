@@ -41,31 +41,33 @@ function Signup() {
         return <Navigate to="/find" />
     } else {
         return (
-                <div>
+            <div className="login-signup-page">
                 <PageNavbar />
 
                 <div class=".mt-n1">
-                    <Container >
-                    <Row className="justify-content-center">
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" onChange={(e) => {setregisterEmail(e.target.value)}} />
-                            <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Form.Group>
+                    <div className="form">
+                        <Container >
+                        <Row className="justify-content-center">
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" onChange={(e) => {setregisterEmail(e.target.value)}} />
+                                <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password"  onChange={(e) => {setregisterPassword(e.target.value)}} />
-                        </Form.Group>
-                        <Button  onClick={register} variant="primary" type="button">
-                            Create user
-                        </Button>
-                    </Form>
-                    </Row>
-                    </Container>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password"  onChange={(e) => {setregisterPassword(e.target.value)}} />
+                            </Form.Group>
+                            <Button  onClick={register} variant="primary" type="button">
+                                Create user
+                            </Button>
+                        </Form>
+                        </Row>
+                        </Container>
+                    </div>
                 </div>
             </div>
         )
