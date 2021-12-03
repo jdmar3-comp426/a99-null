@@ -1,30 +1,22 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6277724&assignment_repo_type=AssignmentRepo)
-# Reataurant Generator
-## First steps
+# Random Nearby Reastaurant Generator
 
-Other steps that you will need to take after you have cloned this repository:
-
-1. Choose and update the LICENSE file accordingly. 
-2. Edit this README.md file and use it as the main location of your technical documentation with links out to information contained under `/docs/`.
-3. Create a `/docs/` directory for more elaborate documentation of your API, planning notes, etc.
-4. Make sure that all of your team members have access to the repository as administrators.
-5. Create a project under the **Projects** tab. Use this to manage your planning. Create a To-do list, etc. Explore the tools available and user them to manage your project.
-7. Assign team roles and include a listing of those roles in this README.md file or in another file under `/docs/`.
-8. Then put your entire development workflow in this repository.
-9. Use **Pull requests** to propose changes and incorporate them into your code from various team members. 
-10. Use **Issues** to identify and track bugs and also to communicate about various aspects of the project.
-
-## Basic Descriptiong
+## Website Basic Description
+This website uses the Google Maps API to search for restaurants within a specified radius and returns a random restaurant so that you don't have to think about where you want to eat!
 
 ## Installation requirements/instructions
-- In backend directory:   
-```npm install```  
-```npm start```
-- In frontend/frontend directory:   
-```npm install```  
+
+- After cloning the a99-null repository, navigate to the backend folder(\a99-null\backend) and run
+```npm install```
 ```npm start```
 
-## Dependency List  
+- In another terminal, navigate to the front end folder (a99-null\frontend\frontend) and run
+```npm install```
+```npm start```
+
+This will install all dependencies needed for the website and run both the front and back end simultaneously
+
+## Dependency List
 
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
@@ -40,22 +32,19 @@ Other steps that you will need to take after you have cloned this repository:
     "web-vitals": "^1.1.2"
 
 ## Run Instructions
+In the front end directory, run:
+```npm start```
+In another terminal, navigate to the backend directory and run:
+```npm start```
+
+## Using the website
+Instructions on how to run the website are included in the /docs folder in a file called "Website User Manual"
+
+A video walkthrough of how to run and use our website is included at the following youtube link
 
 ## Team mangement
+For this project, our group divided into 2 teams:
+1. Backend Leads: Peter Hankyu Wi and Han Lim
+2. Frontend Leads:Feng Xu, Solenn de Larminat and Ella Carter
 
-Plan to meet with your team ASAP.
-Talk through identifying roles within your team.
-
-Try to figure out what each of you are good at/enjoy doing and try to work out roles that incorporate that.
-
-Some basic roles you will want to consider:
-
-1. A review manager - someone to review pull requests and merge or reject them and manage the related discussions
-2. A plan manager - someone to keep an eye on the overall plan and keep the project tab/to-do list up to date
-3. A documentation manager - someone to keep the documentation in order and identify what is missing and needs to be documented
-4. Roles for team members to take charge or different parts of the project. Possible roles:
-    1. Front end lead
-    2. Back end lead
-    3. Databse lead
-    4. Design lead
-    5. Etc.
+Everyone collaborated to fill the roles of Plan Manager, Documentation Manager and Review Manager
