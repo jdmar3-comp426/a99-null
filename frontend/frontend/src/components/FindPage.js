@@ -20,6 +20,7 @@ function FindPage () {
     const [name,setName] = useState(0)
     const[price,setPrice] = useState(0)
     const[address,setAddress] = useState(0)
+    const[place_id,setPlaceID]= useState(0)
     onAuthStateChanged(auth, (user) => {
         setcurrentUser(user);
     });
@@ -28,7 +29,7 @@ function FindPage () {
 
         const auth = getAuth();
         const user = auth.currentUser;
-    
+
         if (user) {
             const searchHistoryRef = doc(db, "users", user.uid)
             console.log(place_id)
@@ -62,7 +63,7 @@ function FindPage () {
          axios.get(`/app/rests/${lat}/${lon}/${radius}`).then(function(response){
             // picking a random index from the array of nearby restaurants
             let i = Math.floor(Math.random() * (response.data.results.length));
-            console.log(response.data.results)
+
             addSearchHistory(response.data.results[i].place_id, response.data.results[i].name)
 
             //saving desired data from randomly selected restaurant
@@ -70,6 +71,7 @@ function FindPage () {
             setName(response.data.results[i]["name"]);
             setPrice(response.data.results[i]["price_level"]);
             setAddress(response.data.results[i]["vicinity"]);
+            setPlaceID(response.data.results[i]["place_id"])
 
 
          }).catch(function (error) {
@@ -108,7 +110,7 @@ function FindPage () {
                     <div className="address">
                         <p className="address-label">Address</p>
                         <p className="address-content">{address}</p>
-                        <a className="map-link" href="www.google.com"><img src="map.png" width = "40" height = "40"></img></a>
+                        <a className="map-link" href={`https://www.google.com/maps/place/?q=place_id:${place_id}`}><img src="map.png" width = "40" height = "40"></img></a>
                     </div>
 
                     <div className="address">
@@ -120,7 +122,7 @@ function FindPage () {
                         <p className="address-label"> Pricing (relative out of 5): </p>
                         <p className="address-content">{price}</p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
