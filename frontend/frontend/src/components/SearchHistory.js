@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import PageNavbar from './Navbar.js'
 import SearchHistoryRow from './SearchHistoryRow.js'
-import {ListGroup, Container} from 'react-bootstrap'
+import {Row, Col, Container} from 'react-bootstrap'
 import {db, auth} from '../firebase-config'
 import {onAuthStateChanged} from 'firebase/auth'
 import { getAuth } from "firebase/auth";
@@ -23,13 +23,15 @@ function SearchHistory(props) {
             const docSnap = await getDoc(docRef)
             let historyArray = docSnap._document.data.value.mapValue.fields.picked.arrayValue.values
             let historyRows = []
+            console.log(historyArray)
             if (historyArray) {
                 for (let i = 0; i < historyArray.length; i++) {
-                    console.log(historyArray[i].mapValue.fields.restaurant_name)
-                    
                     let curRowInfo = {}
                     curRowInfo.title = historyArray[i].mapValue.fields.restaurant_name.stringValue
-                    let curRowDiv = <SearchHistoryRow key = {i} title={curRowInfo.title} />
+                    curRowInfo.date = historyArray[i].mapValue.fields.date.timestampValue
+                    curRowInfo.placeId = historyArray[i].mapValue.fields.place_id.stringValue
+                    let map_link = "https://www.google.com/maps/place/?q=place_id:" + curRowInfo.placeId
+                    let curRowDiv = <SearchHistoryRow key = {i} title={curRowInfo.title} date={curRowInfo.date} map_link={map_link}/>
                     historyRows.push(curRowDiv)
                 }
                 sethistoryEntries(historyRows)
@@ -47,9 +49,36 @@ function SearchHistory(props) {
                             My Search History
                         </h1>
                     </div>
-                    <ListGroup>
+                    <div className="search-history-row-title">
+                        <Row>
+                            <Col
+                                className="justify-content-between align-items-start"
+                            >
+                                <div className="ms-2 me-auto">
+                                <div className="fw-bold">Last Search Date</div>
+                                </div>
+                            </Col>
+                            <Col
+                                className="justify-content-between align-items-start"
+                            >
+                                <div className="ms-2 me-auto">
+                                <div className="fw-bold">Restaurant Name</div>
+                                {props.info}
+                                </div>
+                            </Col>
+                            <Col
+                                className="justify-content-between align-items-start"
+                            >
+                                <div className="ms-2 me-auto">
+                                <div className="fw-bold">Open in Google Map</div>
+                                {props.info}
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div>
                         {historyEntries}
-                    </ListGroup>
+                    </div>
                 </Container>
             </div>
         )
