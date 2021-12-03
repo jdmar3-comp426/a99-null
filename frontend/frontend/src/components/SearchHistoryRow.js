@@ -1,21 +1,34 @@
 import React, {useState} from 'react'
 import PageNavbar from './Navbar.js'
-import {ListGroup} from 'react-bootstrap'
+import {ListGroup, Row, Col} from 'react-bootstrap'
 
 
 function SearchHistoryRow(props) {
     return (
         <div className="search-history-row">
-            <ListGroup as="ol" numbered>
-                <ListGroup.Item
-                    className="d-flex justify-content-between align-items-start"
+            <Row>
+                <Col
+                    className="justify-content-between align-items-start"
+                >
+                    <div className="ms-2 me-auto">
+                    <div className="fw-bold">{props.date}</div>
+                    </div>
+                </Col>
+                <Col
+                    className="justify-content-between align-items-start"
                 >
                     <div className="ms-2 me-auto">
                     <div className="fw-bold">{props.title}</div>
-                    {props.info}
                     </div>
-                </ListGroup.Item>
-            </ListGroup>
+                </Col>
+                <Col
+                    className="justify-content-between align-items-start"
+                >
+                    <div className="ms-2 me-auto">
+                    <a className="his-map-link" href={props.map_link}><img src="magnifier.png" width = "20" height = "20"></img></a>
+                    </div>
+                </Col>
+            </Row>
         </div>
     )
 }

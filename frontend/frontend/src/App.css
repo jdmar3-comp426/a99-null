@@ -172,11 +172,15 @@
 }
 
 .search-history {
-    background-color: yellow;
+    background-color: orange;
     height: 100%;
     min-height: 100vh;
 }
 
 .search-history-row {
-    background-color: navy;
+    background-color: rgb(255, 255, 255);
+}
+
+.search-history-row-title {
+    background-color: #f0942a;
 }
