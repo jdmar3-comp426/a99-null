@@ -48,3 +48,5 @@ For this project, our group divided into 2 teams:
 2. Frontend Leads:Feng Xu, Solenn de Larminat and Ella Carter
 
 Everyone collaborated to fill the roles of Plan Manager, Documentation Manager and Review Manager
+
+Schedule of how tasks were completed is included in the docs document located a99-null/docs/Team Plan.docx
