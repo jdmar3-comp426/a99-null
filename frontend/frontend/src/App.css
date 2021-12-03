@@ -1,9 +1,9 @@
 .test {
-    background-color: blue;
+    background-color: #7BAFD4;
 }
 
 .home {
-    background-color: rgb(219, 111, 111);
+    background-color: #7BAFD4;
     min-height: 100%;
     overflow: hidden;
 }
@@ -15,7 +15,7 @@
 }
 
 .login-signup-content {
-    background-color: rgb(103, 103, 192);
+    background-color: #7BAFD4;
     min-height: 100vh;
     overflow: hidden;
     display: flex;
@@ -235,15 +235,43 @@
 }
 
 .search-history {
-    background-color: orange;
+    background-color: #7BAFD4;
     height: 100%;
     min-height: 100vh;
 }
 
+.search-history-container {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 2rem;
+    padding: 2rem;
+    place-items: center;
+    text-align: center;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 255, 255, 1);
+	/*position:absolute;*/
+	border-top-left-radius:50px;
+	border-top-right-radius:50px;
+	border-bottom-left-radius:50px;
+	border-bottom-right-radius:50px;
+}
+
+.search-history-title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
 .search-history-row {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
 
 .search-history-row-title {
-    background-color: #f0942a;
+    background-color: #7BAFD4;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
 }

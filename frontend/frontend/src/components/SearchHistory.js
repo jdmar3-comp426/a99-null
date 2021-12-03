@@ -43,10 +43,10 @@ function SearchHistory(props) {
         return (
             <div className="search-history">
                 <PageNavbar />
-                <Container >
+                <Container className="search-history-container">
                     <div>
-                        <h1>
-                            My Search History
+                        <h1 className="search-history-title">
+                            Search History
                         </h1>
                     </div>
                     <div className="search-history-row-title">
@@ -55,7 +55,7 @@ function SearchHistory(props) {
                                 className="justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
-                                <div className="fw-bold">Last Search Date</div>
+                                <div className="fw-bold">Search Date</div>
                                 </div>
                             </Col>
                             <Col
