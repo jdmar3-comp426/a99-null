@@ -41,7 +41,6 @@
 	background-color:rgba(255, 255, 255, 1);
 	width:780px;
 	height:600px;
-	/*position:absolute;*/
 	border-top-left-radius:50px;
 	border-top-right-radius:50px;
 	border-bottom-left-radius:50px;
@@ -257,6 +256,7 @@
     text-align: center;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.25);
 	background-color:rgba(255, 255, 255, 1);
+    min-height: 400px;
 	/*position:absolute;*/
 	border-top-left-radius:50px;
 	border-top-right-radius:50px;
