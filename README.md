@@ -6,13 +6,13 @@ This website uses the Google Maps API to search for restaurants within a specifi
 
 ## Installation requirements/instructions
 
-- After cloning the a99-null repository, navigate to the backend folder(\a99-null\backend) and run
-```npm install```
-```npm start```
+After cloning the a99-null repository, navigate to the backend folder(\a99-null\backend) and run
+- ```npm install```
+- ```npm start```
 
-- In another terminal, navigate to the front end folder (a99-null\frontend\frontend) and run
-```npm install```
-```npm start```
+ In another terminal, navigate to the front end folder (a99-null\frontend\frontend) and run:
+- ```npm install```
+- ```npm start```
 
 This will install all dependencies needed for the website and run both the front and back end simultaneously
 
@@ -33,11 +33,11 @@ This will install all dependencies needed for the website and run both the front
 
 ## Run Instructions
 In the front end directory, run:
-```npm start```
+- ```npm start```
 In another terminal, navigate to the backend directory and run:
-```npm start```
+- ```npm start```
 
-## Using the website
+## Using the Website
 Instructions on how to run the website are included in the /docs folder in a file called "Website User Manual"
 
 A video walkthrough of how to run and use our website is included at the following youtube link: https://youtu.be/iVD-lyG_vHo
