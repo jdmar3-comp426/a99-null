@@ -89,19 +89,38 @@ function FindPage () {
                 <div className="find-form">
                     <form onSubmit = {getRestaurant}>
                         <div className="find-form-content">
-                            <label for="radius" className="find-form-content-radius">Radius (meters?) </label> <br/>
-                            <input id="radius" type="number" placeholder="1500"></input><br/>
-                            <button type="submit">Get restaurant</button>
+                            <label for="radius" className="find-form-content-radius">Within</label> <br/>
+                            <input id="radius" type="number" placeholder="1500 meters"></input><br/>
+                            <label>Meters</label>
+                            <button className="find-button" type="submit">Find</button>
                         </div>
                     </form>
                 </div>
 
                 {/* information */}
                 <div className="find-info">
-                    <p>Restaurant: {name}</p>
-                    <p>Address: {address}</p>
-                    <p>Rating: {rating} </p>
-                    <p> Pricing (relative out of 5): {price}</p>
+                    <p style={{fontSize: "2rem"}}>Our Recommendation</p>
+
+                    <div className="restaurant">
+                        <p>{name}</p>
+                    </div>
+
+                    <div className="address">
+                        <p className="address-label">Address</p>
+                        <p className="address-content">{address}</p>
+                        <a className="map-link" href="www.google.com"><img src="../map.png"></img></a>
+                    </div>
+
+                    <div className="address">
+                        <p className="address-label">Rating</p>
+                        <p className="address-content">{rating}</p>
+                    </div>
+
+                    <div className="address">
+                        <p className="address-label"> Pricing (relative out of 5): </p>
+                        <p className="address-content">{price}</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>

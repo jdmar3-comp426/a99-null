@@ -44,8 +44,10 @@ function Signup() {
             <div className="login-signup-page">
                 <PageNavbar />
 
+            <div className="login-signup-content">
                 <div class=".mt-n1">
                     <div className="form">
+                        <h1>Signup</h1>
                         <Container >
                         <Row className="justify-content-center">
                         <Form>
@@ -61,14 +63,17 @@ function Signup() {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password"  onChange={(e) => {setregisterPassword(e.target.value)}} />
                             </Form.Group>
-                            <Button  onClick={register} variant="primary" type="button">
+                            {/* <Button  onClick={register} variant="primary" type="button">
                                 Create user
-                            </Button>
+                            </Button> */}
                         </Form>
                         </Row>
                         </Container>
+
+                        <button className="enter-button" onClick={register}>Create user</button>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

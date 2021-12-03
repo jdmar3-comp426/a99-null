@@ -46,29 +46,33 @@ function Login() {
         return (
             <div className="login-signup-page">
                 <PageNavbar />
-                <div class=".mt-n1">
-                <div className="form">
-                    <Container >
-                    <Row className="justify-content-center">
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" onChange={(e) => {setloginEmail(e.target.value)}} />
-                            <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Form.Group>
+                <div className="login-signup-content">
+                    <div class=".mt-n1">
+                    <div className="form">
+                        <h1>Login</h1>
+                        <Container >
+                        <Row className="justify-content-center">
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" onChange={(e) => {setloginEmail(e.target.value)}} />
+                                <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password"  onChange={(e) => {setloginPassword(e.target.value)}} />
-                        </Form.Group>
-                        <Button  onClick={login} variant="primary" type="button">
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password"  onChange={(e) => {setloginPassword(e.target.value)}} />
+                            </Form.Group>
+                        {/* <Button  onClick={login} variant="primary" type="button">
                         Login
-                        </Button>
-                    </Form>
-                    </Row>
-                    </Container>
+                        </Button> */}
+                        </Form>
+                        </Row>
+                        </Container>
+                    <button className="enter-button" onClick={login}>Login</button>
+                </div>
                 </div>
 
                 </div>
