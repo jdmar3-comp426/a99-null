@@ -108,7 +108,7 @@ function FindPage () {
                     <div className="address">
                         <p className="address-label">Address</p>
                         <p className="address-content">{address}</p>
-                        <a className="map-link" href="www.google.com"><img src="../map.png"></img></a>
+                        <a className="map-link" href="www.google.com"><img src="map.png" width = "40" height = "40"></img></a>
                     </div>
 
                     <div className="address">
