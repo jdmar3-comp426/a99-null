@@ -72,7 +72,7 @@ function UpdateAccount() {
         return (
                 <div className="login-signup-page">
                     <PageNavbar />
-                    <div class=".mt-n1">
+                    <div class="login-signup-content .mt-n1">
                     <div className="form">
                     <Container >
                     <Row className="justify-content-center">

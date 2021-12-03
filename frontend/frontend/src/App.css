@@ -14,13 +14,21 @@
     text-align: center;
 }
 
-.login-signup-content {
+.login-signup-page {
     background-color: #7BAFD4;
+    /* flex-direction: column; */
     min-height: 100vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     align-items: center;
+}
+
+.login-signup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
 }
 
 .form {
