@@ -27,7 +27,6 @@ function PageNavbar() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                <Nav.Link href="#features">About</Nav.Link>
                 </Nav>
                 <Nav>
                 <NavDropdown title={dropdownTitle} id="navbarScrollingDropdown">
