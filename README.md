@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6277724&assignment_repo_type=AssignmentRepo)
+
 # Random Nearby Reastaurant Generator
 
 ## Website Basic Description
@@ -38,7 +38,7 @@ In another terminal, navigate to the backend directory and run:
 - ```npm start```
 
 ## Using the Website
-Instructions on how to run the website are included in the /docs folder in a file called "Website User Manual"
+Instructions on how to run the website are included in the /docs folder in a file called "Website User Manual" located at a99-null/docs/Website User Manual.docx
 
 A video walkthrough of how to run and use our website is included at the following youtube link: https://youtu.be/iVD-lyG_vHo
 
