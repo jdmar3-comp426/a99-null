@@ -97,7 +97,7 @@ function FindPage () {
                                 <input id="radius" type="number" className="find-form-content-input" placeholder="1500"></input><br/>
                                 <label className="find-form-content-radius">meters</label>
                             </div>
-                            <button className="find-button-1" type="submit">Find A restaurant</button>
+                            <button className="find-button-1" type="submit">Find A Restaurant</button>
 
                         </form>
                     </div>
@@ -138,7 +138,7 @@ function FindPage () {
     
                         <div className="address">
                             <p className="other-label">Rating</p>
-                            <p className="other-content">{rating==null ? "N/A" : 'A' * 4}</p>
+                            <p className="other-content">{rating==null ? "N/A" : rating}</p>
                         </div>
     
                         <div className="address">
