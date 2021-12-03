@@ -16,10 +16,10 @@ function FindPage () {
 
     const user = auth.currentUser;
     const [currentUser, setcurrentUser] = useState({})
-    const [rating, setRating] = useState(0)
-    const [name,setName] = useState(0)
-    const[price,setPrice] = useState(0)
-    const[address,setAddress] = useState(0)
+    const [rating, setRating] = useState(null)
+    const [name,setName] = useState("N/A")
+    const[price,setPrice] = useState(null)
+    const[address,setAddress] = useState("N/A")
     onAuthStateChanged(auth, (user) => {
         setcurrentUser(user);
     });
@@ -81,50 +81,75 @@ function FindPage () {
 
     console.log(currentUser)
     if (currentUser) {
-        return (
-            <div className="findpage">
-            <PageNavbar />
-            {/* input form */}
-            <div className="find-content">
-                <div className="find-form">
-                    <form onSubmit = {getRestaurant}>
-                        <div className="find-form-content">
-                            <label for="radius" className="find-form-content-radius">Within</label> <br/>
-                            <input id="radius" type="number" placeholder="1500 meters"></input><br/>
-                            <label>Meters</label>
-                            <button className="find-button" type="submit">Find</button>
-                        </div>
-                    </form>
-                </div>
 
-                {/* information */}
-                <div className="find-info">
-                    <p style={{fontSize: "2rem"}}>Our Recommendation</p>
+        if (name == "N/A") {
+            return (
+                <div className="findpage">
+                <PageNavbar />
+                {/* input form */}
+                <div className="find-content">
+                    <div className="find-form">
+                        <form onSubmit = {getRestaurant}>
+                            <div className="find-form-content">
+                                <label for="radius" className="find-form-content-radius">Within</label> <br/>
+                                <input id="radius" type="number" className="find-form-content-input" placeholder="1500"></input><br/>
+                                <label className="find-form-content-radius">meters</label>
+                            </div>
+                            <button className="find-button-1" type="submit">Find A restaurant</button>
 
-                    <div className="restaurant">
-                        <p>{name}</p>
+                        </form>
                     </div>
-
-                    <div className="address">
-                        <p className="address-label">Address</p>
-                        <p className="address-content">{address}</p>
-                        <a className="map-link" href="www.google.com"><img src="map.png" width = "40" height = "40"></img></a>
-                    </div>
-
-                    <div className="address">
-                        <p className="address-label">Rating</p>
-                        <p className="address-content">{rating}</p>
-                    </div>
-
-                    <div className="address">
-                        <p className="address-label"> Pricing (relative out of 5): </p>
-                        <p className="address-content">{price}</p>
-                    </div>
-                    
+    
                 </div>
             </div>
-        </div>
-        )} else {
+            )
+        } else {
+            return (
+                <div className="findpage">
+                <PageNavbar />
+                {/* input form */}
+                <div className="find-content">
+                    <div className="find-form">
+                        <form onSubmit = {getRestaurant}>
+                            <div className="find-form-content">
+                                <label for="radius" className="find-form-content-radius">Within</label> <br/>
+                                <input id="radius" type="number" className="find-form-content-input" placeholder="1500"></input><br/>
+                                <label className="find-form-content-radius">meters</label>
+                                <button className="find-button" type="submit">Find</button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    {/* information */}
+                    <div className="find-info">
+                        <p style={{fontSize: "2rem", fontWeight: "bold"}}>Our Recommendation</p>
+    
+                        <div className="restaurant">
+                            <p>{name}</p>
+                        </div>
+    
+                        <div className="address">
+                            <p className="address-label">Address</p>
+                            <p className="address-content">{address}</p>
+                            <a className="map-link" href="www.google.com"><img src="map.png" width = "40" height = "40"></img></a>
+                        </div>
+    
+                        <div className="address">
+                            <p className="other-label">Rating</p>
+                            <p className="other-content">{rating==null ? "N/A" : 'A' * 4}</p>
+                        </div>
+    
+                        <div className="address">
+                            <p className="other-label"> Pricing</p>
+                            <p className="other-content">{price==null ? "N/A" : price}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            )
+        }
+    } else {
         return <Navigate to="/" />
     }
 }
