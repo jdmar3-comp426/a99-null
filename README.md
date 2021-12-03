@@ -40,7 +40,7 @@ In another terminal, navigate to the backend directory and run:
 ## Using the website
 Instructions on how to run the website are included in the /docs folder in a file called "Website User Manual"
 
-A video walkthrough of how to run and use our website is included at the following youtube link
+A video walkthrough of how to run and use our website is included at the following youtube link: https://youtu.be/iVD-lyG_vHo
 
 ## Team mangement
 For this project, our group divided into 2 teams:
