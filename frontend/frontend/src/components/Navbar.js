@@ -36,8 +36,9 @@ function PageNavbar() {
                 <NavDropdown.Item href="/updateaccount">
                     Account Setting
                 </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={logout}>Log out</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link onClick={logout}>Log out</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>
